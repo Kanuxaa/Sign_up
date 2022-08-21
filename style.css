@@ -1,0 +1,209 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background-image: url(images/wallpaper.png);
+    background-repeat: none;
+}
+
+.box{
+    position: relative;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 360px;
+    min-height: 360px;
+    box-sizing: border-box;
+    background-image: url(images/box_bg.jpg);
+    border-radius: 30px;
+    box-shadow: 5px 10px 25px rgb(0,0,0,1);
+}
+
+.inp{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login, .password{
+    margin: 5px;
+    width: 85%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 5px 10px 20px rgb(0,0,0,0.4);
+    box-sizing: border-box;
+}
+
+.login{
+    margin-top: 15px;
+}
+
+.login span{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login span.invalid::before{
+    content: '\f057';
+    font-family: fontAwesome;
+    height: 16px;
+    color: red;
+    transition: 0.1s;
+}
+
+.login span.valid::before{
+    content: '\f058';
+    font-family: fontAwesome;
+    height: 16px;
+    color: rgb(63, 255, 63);
+    transition: 0.1s;
+}
+
+.login ~ span{
+    height: fit-content;
+    width: 269px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.login ~ span#no{
+    display: none;
+    text-shadow: 
+        0 0 5px rgb(255, 0, 0),
+        0 0 10px rgba(255, 0, 0, 0.571),
+        0 0 19px rgba(255, 0, 0, 0.251);
+    color: red;
+}
+
+.login ~ span#yes{
+    display: none;
+    text-shadow: 
+        0 0 5px rgb(63, 255, 63),
+        0 0 10px rgba(63, 255, 63, 0.571),
+        0 0 19px rgba(63, 255, 63, 0.251);
+    color: rgb(63, 255, 63);
+}
+
+.password span{
+    background-color: rgb(216, 216, 216);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.password span::before{
+    content: '\f06e';
+    font-family: fontAwesome;
+    height: 16px;
+}
+
+.password span.hide::before{
+    content: '\f070';
+    font-family: fontAwesome;
+}
+
+input{
+    margin: 10px;
+    height: 30px;
+    width: 100%;
+    border: none;
+    font-size: 14px;
+}
+
+.validation{
+    box-sizing: border-box;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 85%;
+    height: 150px;
+    background-color: rgba(62, 62, 62, 0.59);
+    border-radius: 10px;
+}
+
+.validation p{
+    margin-left: 10px;
+    transition: 0.5s;
+}
+
+.validation p::before{
+    content: '\f192';
+    font-family: fontAwesome;
+    font-size: 10px;
+    margin: 3px;
+}
+
+.validation p.done{
+    color: rgb(63, 255, 63);
+}
+
+.validation p.done::before{
+    content: '\f058';
+}
+
+button {
+    position: relative;
+    height: 28px;
+    width: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: rgb(0, 55, 151);
+    border-radius: 8px;
+    box-shadow: 5 10px 20px rgb(0,0,0,2);
+}
+
+button span {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+button span:nth-child(1) {
+    background-color: rgb(48, 162, 249);
+    color: white;
+}
+
+button span:nth-child(2) {
+    overflow: hidden;
+    z-index: 2;
+    color: rgb(48, 162, 249);
+    background-color: white;
+    clip-path: polygon(53% 0, 100% 0, 100% 100%, 53% 100%, 63% 50%);
+    transition: 0.5s;
+}
+
+button span:nth-child(2):hover, button span:nth-child(1):hover ~ span:nth-child(2){
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%, 100% 50%);
+}
